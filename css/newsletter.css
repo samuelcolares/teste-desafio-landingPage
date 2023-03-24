@@ -1,0 +1,105 @@
+/* Quarta Seção */
+.newsletter .container {
+    text-align: center;
+    color: var(--color-gray);
+}
+
+/* Configurações do título da seção */
+.newsletter_title-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+}
+.newsletter_title-wrapper h2 {
+    width: 60%;
+    font-size: 20px;
+    font-family: var(--bold-font-family);
+    text-align: center;
+    color: var(--color-gray);
+}
+
+/* Texto: "Quer que seus amigos também ganhem a lista personalizada deles? Preencha agora!" */
+.newsletter .container p {
+    margin: 2.5rem 0;
+}
+
+/* Configurações para a validação do formulário, feito no JavaScript */
+.newsletter_form {
+    transition: 1s;
+}
+.newsletter_form.formularioEnviado {
+    opacity: 0;
+}
+.newsletter_form.obrigado {
+    display: grid;
+    place-content: center;
+}
+.newsletter_form-wrap input.erroFormulario {
+    border-color: red;
+}
+
+
+/* Configurações do formulário */
+.newsletter_form_flex {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.newsletter_form-wrap label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 0.875rem;
+}
+.newsletter_form-wrap input {
+    border: 1px solid var(--color-gray);
+    text-align: left;
+    width: 340px;
+    height: 30px;
+    padding: 5px;
+    transition: 0.4s;
+}
+
+/* Configurações do botão de envio do formulário */
+.newsletter_btn {
+    grid-column: span 2;
+    display: block;
+    margin: 0 auto;
+    margin-top: 3.5rem;
+    margin-bottom: 6rem;
+    font-family: inherit;
+    color: var(--color-gray);
+    background-color: transparent;
+    border: 1px solid var(--color-gray);
+    font-size: 1.125rem;
+    border-radius: 4px;
+    padding: 0.5rem;
+    width: 260px;
+}
+
+@media screen and (max-width: 420px) {
+    .newsletter_title-wrapper{
+        margin-top: 6rem;
+    }
+    .newsletter .container p{
+        padding: 0 2.5%;
+    }
+
+    .newsletter_form{
+        padding: 0 2.5%;
+    }
+    .newsletter_form_flex {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 40px;
+    }
+    .newsletter_form-wrap{
+        width: 100%;
+    }
+    .newsletter_form-wrap input {
+        width: 100%;
+
+    }
+}

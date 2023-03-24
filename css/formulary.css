@@ -1,0 +1,140 @@
+/* Segunda Seção */
+.formContent .container {
+    display: flex;
+    gap: 20px;
+    margin-top: 1rem;
+}
+
+/* Divisão da tela em 50% para o conteúdo em texto e 50% para o cadastro */
+.formContent_Texts,
+.formContent_form {
+    flex: 1;
+    color: var(--color-gray);
+}
+
+/* ---- Textos ---- */
+
+/* Texto: "Ajude o algorítimo a ser mais certeiro" */
+.formContent_Texts h3 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* Texto: "Lorem impsum" */
+.formContent_Texts p {
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+}
+
+/* ------------- */
+
+/* ---- Formulário de cadastro ---- */
+.formContent_form {
+    display: grid;
+    justify-items: center;
+}
+
+/* Transição aplicada por mudanças de classes aplicadas pelo JavaScript */
+.formContent_form {
+    transition: 1s;
+}
+
+/* Classe 'formularioEnviado' aplicada pelo JavaScript */
+.formContent_form.formularioEnviado {
+    opacity: 0;
+}
+
+/* Classe 'obrigado' aplicada pelo JavaScript */
+.formContent_form.obrigado {
+    display: grid;
+    place-content: center;
+}
+
+/* Configurações do texto inserido pelo JavaScript após formulário ser enviado */
+.formContent_form.obrigado p {
+    font-size: 2rem;
+}
+
+/* Envolvendo o conteúdo do formulário para centralização */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Afastar o label do input */
+.form-wrap {
+    display: grid;
+    gap: 8px;
+}
+
+/* Separar os checkboxes */
+.form-wrapRadio {
+    display: flex;
+    gap: 50px;
+}
+
+/* Alinhar bola do input e o texto */
+.radio {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Configuração geral para todos os labels */
+label {
+    font-size: 14px;
+}
+
+/* Definição de borda, largura e altura, dos inputs e do botão de enviar Formulário */
+.input,
+.btnForm1 {
+    width: 340px;
+    height: 30px;
+    border: 1px solid var(--color-gray);
+}
+
+/* Classe aplicada pelo JavaScript para indicar erro ao preencher formulário */
+.input.erroFormulario {
+    transition: 0.4s;
+    border-color: red;
+    outline-color: red;
+}
+
+/* Classe aplicada pelo JavaScript para indicar erro ao preencher formulário */
+label.erroFormulario {
+    color: red;
+}
+
+/* Configurações do botão de enviar formulário */
+.btnForm1 {
+    background-color: transparent;
+    font-family: inherit;
+    color: var(--color-gray);
+    font-size: 1rem;
+}
+
+.btnForm1:active{
+    transform: scale(0.98);
+}
+
+/* ------------- */
+@media screen and (max-width: 420px) {
+    .formContent .container {
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 0 2.5%;
+    }
+
+    /* Envolvendo o conteúdo do formulário para centralização */
+    .wrapper{
+        width: 100%;
+    }
+
+    /* Definição de largura dos inputs e do botão de enviar Formulário */
+    .input,
+    .btnForm1 {
+        width: 100%;
+    }
+}

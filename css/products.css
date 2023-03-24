@@ -1,0 +1,195 @@
+/* Terceira Seção */
+.products {
+    margin-top: 5rem;
+}
+
+/* Divisão que envolve o título e duas divs pra fazer um efeito */
+.products_title-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Linhas */
+.x {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-gray);
+}
+
+/* Configuração de título da seção */
+.products_title-wrapper h2 {
+    width: 60%;
+    font-size: 20px;
+    font-family: var(--bold-font-family);
+    text-align: center;
+    color: var(--color-gray);
+}
+
+/* Divisão que envolve TODOS os produtos */
+.products-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 4rem;
+}
+
+/* Divisão que envolve cada produto */
+.product {
+    display: grid;
+    gap: 10px;
+    color: var(--color-gray);
+    max-width: 200px;
+}
+
+/* Configuração da imagem do produto */
+.product .product-image {
+    border: 1px solid var(--color-gray);
+    width: 200px;
+    height: 150px;
+}
+
+/* Configuração do nome do produto */
+.product .product-name {
+    font-size: 1rem;
+}
+
+/* Configuração da descrição, do preço antigo e do parcelamento do produto */
+.product .product-description,
+.product .product-old-price,
+.product .product-split {
+    font-size: 0.875rem;
+}
+
+/* Configuração do novo preço do produto */
+.product .product-new-price {
+    font-family: var(--bold-font-family);
+    font-size: 1.125rem;
+}
+
+/* Configuração do botão de comprar o produto */
+.product .product-button {
+    font-family: inherit;
+    color: inherit;
+    background-color: transparent;
+    border: 1px solid var(--color-gray);
+    padding: 0.5rem 0;
+    font-size: 1.125rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Configuração do botão de mostrar mais produtos */
+.product-button:active {
+    transform: scale(0.98);
+}
+.buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Configuração do botões de mostrar outros produtos e voltar para os produtos anteriores */
+.next_btn,
+.prev_btn {
+    display: block;
+    margin-top: 3.5rem;
+    font-family: inherit;
+    color: var(--color-gray);
+    background-color: transparent;
+    border: 1px solid var(--color-gray);
+    font-size: 1.125rem;
+    border-radius: 4px;
+    padding: 0.5rem;
+    width: 260px;
+}
+
+/* Configuração do botão de voltar começando o load invisível */
+.prev_btn {
+    display: none;
+    transition: 0.4s;
+}
+
+/* Configuração do botão de voltar sendo ativado */
+.prev_btn.active {
+    display: block;
+}
+
+/* Configuração do botão de voltar quando desabilitado ficar um pouco transparente */
+.prev_btn.prev_btn.active:disabled {
+    opacity: 0.6;
+    cursor: initial;
+}
+
+/* Configuração do botão de voltar quando desabilitado não sofrer efeito de clique */
+.prev_btn.prev_btn.active:disabled:active {
+    transform: scale(1);
+}
+
+/* efeito de clique dos botões de voltar e avançar */
+.next_btn:active,
+.prev_btn:active {
+    transform: scale(0.98);
+}
+
+@media screen and (max-width: 420px) {
+    /* Divisão que envolve TODOS os produtos */
+    .products-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 1rem;
+        height: 640px;
+        overflow-y: auto;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    /* Linhas */
+    .x {
+        width: 25%;
+        height: 1px;
+        background-color: var(--color-gray);
+    }
+
+    /* Configuração de título da seção */
+    .products_title-wrapper h2 {
+        width: 50%;
+        font-size: 20px;
+        font-family: var(--bold-font-family);
+        text-align: center;
+        color: var(--color-gray);
+    }
+    .product {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-rows: repeat(5, auto);
+        row-gap: 0px;
+        column-gap: 20px;
+        color: var(--color-gray);
+        max-width: 200px;
+    }
+
+    .product .product-image {
+        grid-row: span 5;
+        align-self: center;
+        border: 1px solid var(--color-gray);
+        width: 169px;
+        height: 129px;
+    }
+
+    /* Configuração do botão de comprar o produto */
+    .product .product-button {
+        width: 100%;
+        padding: 0;
+    }
+
+    .product-description {
+        display: none;
+    }
+
+    .buttons-wrapper {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}

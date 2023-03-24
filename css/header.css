@@ -1,0 +1,98 @@
+/* Primeira Seção */
+.header {
+    height: 45vh;
+    text-align: center;
+    color: var(--color-white);
+    position: relative;
+}
+
+/* Background tem que ser aplicado de uma forma diferente, já que o clip-path corta a div */
+.header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    z-index: -1;
+    background: #707070 0% 0% no-repeat padding-box;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 59%);
+}
+
+/* Texto: "uma seleção de produtos" */
+.header .header_text {
+    padding-top: 3rem;
+    font-size: 1.5rem;
+}
+
+/* Texto: "especial para você*/
+.header .header_title {
+    font-size: 2.5rem;
+    font-family: var(--bold-font-family);
+    letter-spacing: 1px;
+}
+
+/* Texto: "Todos os produtos desta lista foram selecionados a partir da sua navegação. Aproveite!" */
+.header .header_subtitle {
+    display: block;
+    /* font-size: 0.875rem; */
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Lista contendo os quatro botões */
+.header_list {
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Botões */
+.header_list li .btnAnchor {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-white);
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--color-gray);
+    width: 160px;
+    height: 40px;
+    /* font-size: 0.875rem; */
+    font-size: 1rem;
+    color: var(--color-gray);
+}
+
+/* Botões Pressionados*/
+.header_list li .btnAnchor:active {
+    transform: scale(0.98);
+}
+
+@media screen and (max-width: 420px) {
+    /* Primeira Seção */
+    .header {
+        text-align: left;
+        padding: 1rem;
+        height: 50vh;
+        position: relative;
+        z-index: -10;
+    }
+    
+    /* Texto: "Todos os produtos desta lista foram selecionados a partir da sua navegação. Aproveite!" */
+    .header .header_subtitle {
+        margin-top: 0.75rem;
+    }
+
+    /* Lista contendo os quatro botões */
+    .header_list {
+        position: absolute;
+        display: grid;
+        grid-template-columns: auto auto;
+        z-index: 1;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%);
+    }
+}

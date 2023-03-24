@@ -1,0 +1,62 @@
+/* 
+Header e Footer clip-paths: https://bennettfeely.com/clippy/
+*/
+
+@import url(header.css);
+@import url(formulary.css);
+@import url(products.css);
+@import url(newsletter.css);
+@import url(footer.css);
+
+@font-face {
+    font-family: "RegularH";
+    src: url(../fonts/Helvetica\ Neue\ Regular.otf);
+}
+
+@font-face {
+    font-family: "BoldH";
+    src: url(../fonts/Helvetica\ Neue\ Condensed\ Bold.ttf);
+}
+
+:root {
+    --regular-font-family: "RegularH";
+    --bold-font-family: "BoldH";
+    --color-white: #ffffff;
+    --color-gray: #888888;
+}
+
+/* 
+    12px -> 0.75rem
+    14px -> 0.875rem
+    16px -> 1rem
+    18px -> 1.125rem
+    20px -> 1.25rem
+    40px -> 2.5rem
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    font-family: var(--regular-font-family);
+    font-size: 16px;
+    background-color: #ffffff;
+}
+
+.container {
+    width: calc(100vw - 38%);
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 420px) {
+    .container {
+        width: 100%;
+    }
+}
